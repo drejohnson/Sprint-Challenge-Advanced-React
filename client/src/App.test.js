@@ -1,6 +1,9 @@
 import React from 'react';
 import { render, fireEvent } from '@testing-library/react';
+import '@testing-library/jest-dom/extend-expect';
 import App from './App';
+import Header from './components/Header';
+import PlayerList from './components/PlayerList';
 
 describe('Render App', () => {
   it('renders App without crashing', () => {
@@ -8,12 +11,22 @@ describe('Render App', () => {
   });
 });
 
-describe('toggle dark mode', () => {
-  it('it toggles dark mode on and orr', () => {
-    const { getByTestId } = render(<App />);
+describe('Get Player name', () => {
+  it('rendered player name', () => {
+    const { getByText } = render(
+      <PlayerList players={[{ name: 'Alex Morgan' }]} />,
+    );
 
-    fireEvent.click(getByTestId('toggle'));
-    expect(document.body.classList.contains('dark-mode')).toBe(false);
+    expect(getByText('Alex Morgan'));
+  });
+});
+
+describe('toggle dark mode', () => {
+  it('toggles dark mode on and off', () => {
+    const { getByTestId } = render(<Header />);
+
+    fireEvent.click(getByTestId('darkmode-button'));
+    expect(getByTestId('darkmode-button')).toHaveClass('toggle toggled');
   });
 });
 

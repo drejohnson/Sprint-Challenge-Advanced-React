@@ -10,8 +10,9 @@ const Header = ({ title }) => {
   return (
     <header>
       <h1>{title}</h1>
-      <div data-testid='toggle' className='dark-mode__toggle'>
+      <div className='dark-mode__toggle'>
         <div
+          data-testid='darkmode-button'
           onClick={toggleMode}
           className={darkMode ? 'toggle toggled' : 'toggle'}
         />
