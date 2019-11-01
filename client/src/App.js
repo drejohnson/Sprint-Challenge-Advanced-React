@@ -22,7 +22,7 @@ class App extends Component {
     return (
       <div>
         <h1>Players</h1>
-        <PlayerList players={this.players} />
+        <PlayerList players={this.state.players} />
       </div>
     );
   }
