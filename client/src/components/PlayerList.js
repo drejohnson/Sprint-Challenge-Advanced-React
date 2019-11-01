@@ -1,10 +1,10 @@
 import React from 'react';
 
-const PlayerList = players => {
+const PlayerList = ({ players }) => {
   return (
     <div>
       {players.map(player => (
-        <div>
+        <div key={player.name}>
           <h2>{player.name}</h2>
           <p>
             Country <span>{player.country}</span>
