@@ -23,6 +23,42 @@
   color: #61dafb;
 }
 
+header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 4rem;
+}
+
+.dark-mode__toggle {
+  background: #eee;
+  border-radius: 50px;
+  border: none;
+  height: 20px;
+  position: relative;
+  width: 40px;
+}
+
+.toggle {
+  background: #fff;
+  border-radius: 50px;
+  height: 18px;
+  left: 0;
+  position: absolute;
+  transition: 0.2s;
+  width: 20px;
+}
+
+.toggled {
+  left: 18px;
+}
+
+.dark-mode {
+  color: #fff;
+  background-color: #111;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
